@@ -1,19 +1,23 @@
 :root {
   --wheel-font: 'Lato', 'Quicksand', sans-serif;
-  --wheel-size: 400px;
+  --wheel-size: 350px;
   --wheel-slice-spacing: 50px;
   --wheel-border-size: 5px;
-  --wheel-color: #da3768;
+  --wheel-color: #fcc700;
   --neutral-color: white;
   --PI: 3.14159265358979;
-  --nb-item: 0;
-  --item-nb: 0;
-  --selected-item: 0;
-  --nb-turn: 5;
+  --nb-item: 1;
+  --item-nb: 1;
+  --selected-item: 1;
+  --nb-turn: 9;
   --spinning-duration: 4s;
   --reset-duration: 0.25s;
 }
-
+.mymodal {
+  background-image: url(../../bg3.jpeg);
+  background-size: cover;
+  background-repeat: no-repeat;
+}
 /* Conteneur de la roue = cercle rose extérieur */
 .wheel-container {
   display: block;
@@ -39,7 +43,7 @@
   width: 0;
   top: 50%;
   transform: translateY(-50%);
-  z-index: 2;
+  /* z-index: 1; */
   border: solid transparent 20px;
   border-left-width: 0;
 }
@@ -96,7 +100,6 @@
   display: block;
   position: absolute;
   box-sizing: border-box;
-
   /* position de l'item */
   top: 50%;
   left: 50%;
@@ -105,7 +108,7 @@
   transform: translateY(-50%) rotate(calc(var(--item-nb) * (360deg / var(--nb-item, 1))));
 
   /* texte */
-  color: var(--neutral-color);
+  color: red;
   text-align: right;
   padding: 0 25px 0 50px;
   font-family: var(--wheel-font);
@@ -124,7 +127,9 @@
   left: 50%;
   transform: translate(-50%, -50%);
   padding-left: 0px;
-  opacity: 0.25;
+  opacity:0.25!important;
+  -webkit-opacity: 0.25;
+  
 
   /* 
     Largeur du triangle
